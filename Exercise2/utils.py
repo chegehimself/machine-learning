@@ -31,7 +31,7 @@ def mapFeature(X1, X2, degree=6):
         A matrix of of m rows, and columns depend on the degree of polynomial.
     """
     if X1.ndim > 0:
-        out = [np.ones(X1.shape[0])]
+        out = [np.ones(X1.shape[0], dtype=object)]
     else:
         out = [np.ones(1)]
 
@@ -42,7 +42,7 @@ def mapFeature(X1, X2, degree=6):
     if X1.ndim > 0:
         return np.stack(out, axis=1)
     else:
-        return np.array(out)
+        return np.array(out, dtype=object)
 
 
 def plotDecisionBoundary(plotData, theta, X, y):
